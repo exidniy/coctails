@@ -14,7 +14,7 @@ const router = createRouter({
       name: "cocktail",
       component: () => import("../views/CocktailView.vue"),
       props: true,
-      beforeEnter: (to, from, next) => {
+    beforeEnter: (to, _from, next) => {
         const code = to.params.code as string;
         if (COCKTAIL_CODES.includes(code as CocktailCode)) {
           next();
